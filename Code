@@ -3,7 +3,7 @@
 int main()
 {
 	int y,m,d,ly,lm,ld;
-	int a,b,c,i,k,l,s,f,z=0,live=0,t=0;
+	int a,b,c,i,k,l,s,f,live=0,t=0;
 	int j[]={0,31,28,31,30,31,30,31,31,30,31,30,31};
 	printf("输入第一个日期\n\t年：");
 	scanf("%d",&y);
@@ -28,7 +28,6 @@ int main()
 		c=ld;
 		ld=d;
 		d=c;
-		z++;
 	}
 	else
 	{
