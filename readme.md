@@ -1,3 +1,5 @@
+#C004
+
 #include<stdio.h>
 #include<stdlib.h>
 int main()
@@ -5,6 +7,7 @@ int main()
 	int y,m,d,ly,lm,ld;
 	int a,b,c,i,k,l,s,f,live=0,t=0;
 	int j[]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+	//一月份是不加的，所以放个0
 	printf("输入第一个日期\n\t年：");
 	scanf("%d",&y);
 	printf("\t月：");
@@ -28,24 +31,25 @@ int main()
 		c=ld;
 		ld=d;
 		d=c;
-	}
+	}//较早日期赋值给y,m,d,较晚日期赋值给ly,lm,ld
 	else
 	{
 		a=y;
 		b=m;
 		c=d;
-	}
-	for(k=0;k<2;k++)
+	}//后面要把ly的值赋给y，存一下
+	for(k=0;k<2;k++) //两个日期循环2次
 	{
 		t=0;
 		j[2]=28;
 		l=365;
+		//循环开始前初始化t,j,l的值
 		if((y%4==0&&y%100!=0)||(y%400==0&&y%3200!=0))
 		{
 			j[2]=29;
 			l=366;
 		}
-		if(m>12||d>j[m]||1>m||1>d||1>y)
+		if(m>12||d>j[m]||1>m||1>d||1>y) //因m=12需要参与判断，所以j[]有第13个数
 		{
 			if(k==1)
 			{
@@ -58,7 +62,7 @@ int main()
 			system("pause");
 			return 0;
 		}
-		for(i=0;i<m;i++)
+		for(i=0;i<m;i++) //按照输入月份加上前几个月的天数
 		{
 			t+=j[i];
 		}
